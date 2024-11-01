@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAN KEN PON!!</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="p-5">
+
+<!-- Header[start] -->
+<header class="flex justify-start items-center h-20 my-3 border-b-4 border-[#425167] max-[430px]:h-16"><img class="h-20 max-[430px]:h-10" src="img/title.png" alt="result"></header>
+<!-- Header[end] -->
+
+<h1 class="hidden">JAN KEN PON!!</h1>
+<section class="flex flex-col md:flex-row"> 
+  <!-- 左エリア（結果表示用） -->
+  <div class="md:w-auto rounded-xl mt-1 border-solid border-8 border-yellow-500 max-[430px]:flex w-full md:w-1/6 overflow-visible" style="background-color: #425167;">
+    <h1 class="w-full max-[430px]:w-[25%] max-[430px]:mt-3 flex justify-center  max-[430px]:block"><img class="pt-3 max-[430px]:pt-0 h-auto w-[200px]" src="img/result.png" alt="result"></h1>
+    <ul class="p-4 max-[430px]:p-0">
+      <li>
+        <ul class="w-32 p-1 flex flex-col max-[430px]:flex-row max-[430px]:gap-4 max-[430px]:w-auto">
+          <!-- リストアイテム1 -->
+          <li class="min-h-32 my-2 flex flex-col max-[430px]:flex-row max-[430px]:flex-1 items-start max-[430px]:items-baseline inline-table-430"> <img class="w-24 pb-2" src="img/ui_text_win.png" alt="win"> <span id="winStars"></span> </li>
+          <!-- リストアイテム2 -->
+          <li class="min-h-32 my-2 flex flex-col max-[430px]:flex-row max-[430px]:flex-1 items-start max-[430px]:items-baseline inline-table-430"> <img class="w-24 pb-2" src="img/ui_text_lose.png" alt="lose"> <span id="looseStars"></span> </li>
+          <!-- リストアイテム3 -->
+          <li class="min-h-32 my-2 flex flex-col max-[430px]:flex-row max-[430px]:flex-1 items-start max-[430px]:items-baseline inline-table-430"> <img class="w-24 pb-2" src="img/ui_text_draw.png" alt="draw"> <span id="drawStars"></span> </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- じゃんけんエリア -->
+  <div class="w-full md:w-5/6 bg-white">
+    <div class="container mx-auto px-9 py-5 flex flex-col items-center justify-center float-animation max-[430px]:px-0">
+      <div class="w-full mb-1"> 
+        <!-- コンピューターの手の画像を表示 --> 
+        <img id="computerHand" class="float-animation object-contain object-center w-full h-[40vh] rounded fadeIn500ms" alt="コンピューターの手" src="img/top.svg"> </div>
+    </div>
+    
+    <!-- ボタンのグリッドコンテナ -->
+    <div class="md:w-5/6 grid grid-cols-3 gap-4 px-9 py-0 items-center justify-center mx-auto"> 
+      <!-- 上段3つのボタン -->
+      <button onclick="playGame('グー'), this" class="playerChoice w-30 h-30 bg-yellow-500 rounded-xl focus:outline-none hover:bg-red-600 p-0 flex items-center justify-center"> <img src="img/goo.png" alt="icon" class="w-30 h-30"> </button>
+      <button onclick="playGame('チョキ', this)" class="playerChoice w-30 h-30 bg-yellow-500 rounded-xl focus:outline-none hover:bg-red-600 p-0 flex items-center justify-center"> <img src="img/choki.png" alt="icon" class="w-30 h-30"> </button>
+      <button onclick="playGame('パー', this)" class="playerChoice w-30 h-30 bg-yellow-500 rounded-xl focus:outline-none hover:bg-red-600 p-0 flex items-center justify-center"> <img src="img/par.png" alt="icon" class="w-30 h-30"> </button>
+      
+      <!-- 下段の幅いっぱいのボタン -->
+      <button onclick="startGame()" class="w-full h-20 bg-custom rounded-xl focus:outline-none col-span-3 text-white text-3xl font-semibold flex items-center justify-center">Tap to Start!</button>
+    </div>
+    
+    <!-- じゃんけんの結果を表示するエリア -->
+    <h2 class="mt-8 text-xl text-center hidden">
+      <p id="result" class="text-2xl font-semibold mb-4">手を選んでください！</p>
+      <p id="playerChoice">あなたの手: </p>
+      <p id="computerChoice">コンピューターの手: </p>
+    </h2>
+  </div>
+</section>
+
+<!-- じゃんけん音声 -->
+<audio id="jankenSound" src="audio/j1.mp3" preload="auto"></audio>
+<!--<script src="js/customize.js"></script>--> 
+<script src="js/customize.js"></script>
+</body>
+</html>

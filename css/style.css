@@ -1,0 +1,45 @@
+/* CSS Document */
+.bg-custom {
+  background-color: #425167;
+}
+.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* 1.5秒間かけてフェードイン */
+.fadeIn500ms {
+  animation-name: fadeIn500ms;
+  animation-delay: 500ms;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+@keyframes fadeIn500ms {
+  0% {}
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* 無効化したボタンのスタイル  */
+.disabled-style {
+  opacity: 1;
+  /*pointer-events: none; */
+}
+.playerChoice:hover, .playerChoice.hold-hover {
+  background-color: #dc2626 !important; /* プレイ中ユーザー選択ボタンのホバー色 */
+}
+/* width 430px以下の場合 */
+@media (max-width: 430px) {
+  .inline-table-430 {
+    display: inline-table !important;
+  }
+}
